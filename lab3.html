@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const CMAS_DAY = 25
+    const CMAS_MONTH = 12
+
+    var currentDate  = new Date();
+    var cmasDate = new Date(currentDate.getFullYear(), CMAS_MONTH, CMAS_DAY)
+    if(cmasDate.getMonth() === CMAS_MONTH
+        &&  cmasDate.getDate() > CMAS_DAY){
+        cmasDate.setFullYear(cmasDate.getFullYear() +1)
+    }
+    let oneDay  = 24*60*60*1000
+    let dayleft = Math.floor((cmasDate.getTime() - currentDate.getTime()) / oneDay)
+    console.log("Số ngày đến giáng sinh là : ",dayleft)
+</script>
+</body>
+</html>
